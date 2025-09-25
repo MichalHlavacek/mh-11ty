@@ -24,16 +24,81 @@
 <body class="bg-white">
   <!-- Navbar -->
   <section id="navbar2" class="flex w-full items-center px-5 bg-transparent -mb-16 lg:-mb-20 h-16 lg:h-20 lg:px-[5%] z-10 relative">
-    <div class="mx-auto w-full lg:flex lg:items-center lg:justify-center lg:gap-4">
+    <div class="mx-auto w-full lg:flex lg:items-center lg:justify-between lg:gap-4">
+      <!-- Logo (left side) -->
       <div class="flex min-h-16 items-center justify-between md:min-h-18 lg:min-h-full lg:px-0">
         <a href="/" class="flex items-center gap-2 md:gap-4 lg:gap-4">
           <img src="/static/mh.png" alt="MichalHlavacek Logo" class="h-10 md:h-12">
           <span class="font-Fira text-2xl lg:text-3xl font-normal whitespace-nowrap">Michal Hlavacek</span>
         </a>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-      <div class="overflow-hidden px-[5%] text-center transition-all duration-800 max-h-0 lg:max-h-screen lg:flex lg:items-center lg:justify-center lg:px-0"></div>
+      
+      <!-- Desktop Navigation (right side) -->
+      <nav class="hidden lg:flex lg:items-center lg:space-x-8">
+        <a href="/" class="font-Fira text-lg font-medium text-black hover:text-gray-700 transition-colors">Home</a>
+        <a href="#about" class="font-Fira text-lg font-medium text-black hover:text-gray-700 transition-colors">About</a>
+        <a href="#services" class="font-Fira text-lg font-medium text-black hover:text-gray-700 transition-colors">Services</a>
+        <a href="#contact" class="font-Fira text-lg font-medium text-black hover:text-gray-700 transition-colors">Contact</a>
+      </nav>
     </div>
   </section>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-50 lg:hidden hidden">
+    <div class="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true"></div>
+    
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-[95%] bg-mustard shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Close button -->
+        <div class="flex justify-end p-6">
+          <button id="mobile-menu-close" class="p-2 rounded-md text-black hover:text-gray-700 hover:bg-black hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black focus:ring-opacity-20">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Menu content -->
+        <div class="flex-1 flex flex-col justify-center items-center px-6">
+          <nav class="space-y-8 text-center">
+            <a href="/" class="block text-4xl font-Fira font-bold text-black hover:text-gray-700 transition-colors">Home</a>
+            <a href="#about" class="block text-4xl font-Fira font-bold text-black hover:text-gray-700 transition-colors">About</a>
+            <a href="#services" class="block text-4xl font-Fira font-bold text-black hover:text-gray-700 transition-colors">Services</a>
+            <a href="#contact" class="block text-4xl font-Fira font-bold text-black hover:text-gray-700 transition-colors">Contact</a>
+          </nav>
+          
+          <!-- Contact icons -->
+          <div class="mt-16 flex justify-center gap-8">
+            <a href="mailto:hello@michalhlavacek.com" class="text-black hover:text-gray-700 transition-colors">
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/michalhlavacek" target="_blank" rel="noreferrer" class="text-black hover:text-gray-700 transition-colors">
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <div class="">
@@ -83,6 +148,101 @@
   </div>
 </div>
 
+<!-- Blog Section -->
+<section class="px-5 md:px-10 lg:px-20 py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-Fira text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Latest Insights</h2>
+      <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">Strategies, tips, and insights to help you build better customer relationships and grow your retention.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-sm text-gray-500">January 15th, 2025</span>
+            
+            <span class="px-2 py-1 bg-mustard text-black text-xs font-bold rounded">Featured</span>
+            
+          </div>
+          
+          <h3 class="font-Fira text-xl font-bold mb-3">
+            <a href="/blog/post-1/" class="text-black hover:text-gray-700 transition-colors">
+              5 Email Marketing Strategies That Actually Work in 2025
+            </a>
+          </h3>
+          
+          <p class="text-gray-600 mb-4">Discover the email marketing tactics that are driving real results for DTC brands this year. From segmentation to automation, here&#39;s what&#39;s working.</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">email marketing</span>
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">DTC</span>
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">retention</span>
+            
+          </div>
+          
+          <a href="/blog/post-1/" class="inline-flex items-center text-black font-medium hover:text-gray-700 transition-colors">
+            Read More
+            <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+      
+      <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-sm text-gray-500">January 10th, 2025</span>
+            
+            <span class="px-2 py-1 bg-mustard text-black text-xs font-bold rounded">Featured</span>
+            
+          </div>
+          
+          <h3 class="font-Fira text-xl font-bold mb-3">
+            <a href="/blog/post-2/" class="text-black hover:text-gray-700 transition-colors">
+              Why Your Customer Lifetime Value is Lower Than It Should Be
+            </a>
+          </h3>
+          
+          <p class="text-gray-600 mb-4">Most DTC brands are leaving money on the table with their customer retention strategy. Here&#39;s how to identify and fix the gaps in your LTV optimization.</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">LTV</span>
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">retention</span>
+            
+            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">customer value</span>
+            
+          </div>
+          
+          <a href="/blog/post-2/" class="inline-flex items-center text-black font-medium hover:text-gray-700 transition-colors">
+            Read More
+            <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+      
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="/blog" class="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+        View All Posts
+        <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
   </div>
 
   <!-- Footer -->
@@ -116,6 +276,91 @@
   </footer>
 
   <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+      
+      if (!mobileMenuButton || !mobileMenuOverlay || !mobileMenuPanel) {
+        console.error('Mobile menu elements not found');
+        return;
+      }
+      
+      const hamburgerIcon = mobileMenuButton.querySelector('svg:first-child');
+      const closeIcon = mobileMenuButton.querySelector('svg:last-child');
+      
+      function openMobileMenu() {
+        console.log('Opening mobile menu');
+        mobileMenuOverlay.classList.remove('hidden');
+        // Force reflow
+        mobileMenuOverlay.offsetHeight;
+        mobileMenuPanel.classList.remove('translate-x-full');
+        mobileMenuPanel.classList.add('translate-x-0');
+        if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeMobileMenu() {
+        console.log('Closing mobile menu');
+        mobileMenuPanel.classList.remove('translate-x-0');
+        mobileMenuPanel.classList.add('translate-x-full');
+        if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          mobileMenuOverlay.classList.add('hidden');
+        }, 300);
+      }
+      
+      // Open menu
+      mobileMenuButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMobileMenu();
+      });
+      
+      // Close menu
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function(e) {
+          e.preventDefault();
+          closeMobileMenu();
+        });
+      }
+      
+      // Close menu when clicking overlay
+      mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Close menu when clicking menu links
+      const menuLinks = mobileMenuPanel.querySelectorAll('nav a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !mobileMenuOverlay.classList.contains('hidden')) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+          closeMobileMenu();
+        }
+      });
+    });
+
+    // Original scroll position script
     ((STORAGE_KEY, restoreKey) => {
       if (!window.history.state || !window.history.state.key) {
         let key = Math.random().toString(32).slice(2);

@@ -16,6 +16,7 @@ export default {
       colors: {
         'light': '#f8f9fa',
         'dark': '#1a1a1a',
+        'mustard': '#F7D533',
       }
     },
   },

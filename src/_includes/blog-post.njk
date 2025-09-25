@@ -1,0 +1,48 @@
+---
+layout: layout.njk
+---
+
+<article class="px-5 md:px-10 lg:px-20 py-16 md:py-24 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <!-- Post Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-sm text-gray-500">{{ date | date }}</span>
+        {% if featured %}
+        <span class="px-2 py-1 bg-mustard text-black text-xs font-bold rounded">Featured</span>
+        {% endif %}
+      </div>
+      
+      <h1 class="font-Fira text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{{ title }}</h1>
+      
+      <p class="text-xl md:text-2xl text-gray-600 mb-6">{{ excerpt }}</p>
+      
+      <div class="flex flex-wrap gap-2">
+        {% for tag in tags %}
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </header>
+    
+    <!-- Post Content -->
+    <div class="prose prose-lg max-w-none">
+      {{ content | safe }}
+    </div>
+    
+    <!-- Post Footer -->
+    <footer class="mt-12 pt-8 border-t border-gray-200">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <p class="text-gray-600">Ready to implement these strategies?</p>
+          <p class="font-medium">Let's work together to transform your retention results.</p>
+        </div>
+        <a href="mailto:hello@michalhlavacek.com" class="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+          Get In Touch
+          <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </div>
+</article>
