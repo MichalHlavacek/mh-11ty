@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pulse {
+  animation: none;
+}
+
+.pulse:hover {
+  animation: pulse-animation 1s 1;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    scale: 1
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+    scale: 1.2
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgba(0, 0, 0, 0);
+    scale: 1
+  }
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/interbold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira';
+  src: url('/fira.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}

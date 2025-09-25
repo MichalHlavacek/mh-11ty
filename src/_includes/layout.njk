@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "Michal Hlavacek | Customer Retention Strategist" }}</title>
+  <meta name="description" content="{{ description or "I help online brands get more repeat customers with smart design, email marketing, and simple user-friendly stores." }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Michal Hlavacek">
+  <meta property="og:title" content="{{ title or "Michal Hlavacek | Customer Retention Strategist" }}">
+  <meta property="og:description" content="{{ description or "I help online brands get more repeat customers with smart design, email marketing, and simple user-friendly stores." }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://michalhlavacek.com">
+  <meta property="og:image" content="/mh.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or "Michal Hlavacek | Customer Retention Strategist" }}">
+  <meta name="twitter:description" content="{{ description or "I help online brands get more repeat customers with smart design, email marketing, and simple user-friendly stores." }}">
+  <meta name="twitter:image" content="/mh.webp">
+  <link rel="stylesheet" href="/assets/tailwind-CgQ7R6ek.css">
+  <link rel="canonical" href="https://michalhlavacek.com">
+  <link rel="icon" href="/mh.png">
+</head>
+<body class="bg-white">
+  <!-- Navbar -->
+  <section id="navbar2" class="flex w-full items-center px-5 bg-transparent -mb-16 lg:-mb-20 h-16 lg:h-20 lg:px-[5%] z-10 relative">
+    <div class="mx-auto w-full lg:flex lg:items-center lg:justify-center lg:gap-4">
+      <div class="flex min-h-16 items-center justify-between md:min-h-18 lg:min-h-full lg:px-0">
+        <a href="/" class="flex items-center gap-2 md:gap-4 lg:gap-4">
+          <img src="/mh.png" alt="MichalHlavacek Logo" class="h-10 md:h-12">
+          <span class="font-Fira text-2xl lg:text-3xl font-normal whitespace-nowrap">Michal Hlavacek</span>
+        </a>
+      </div>
+      <div class="overflow-hidden px-[5%] text-center transition-all duration-800 max-h-0 lg:max-h-screen lg:flex lg:items-center lg:justify-center lg:px-0"></div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="">
+    {{ content | safe }}
+  </div>
+
+  <!-- Footer -->
+  <footer class="px-5 md:px-10 lg:px-20 pt-12 md:pt-18 lg:pt-0 pb-4 md:pb-8 bg-dark text-white">
+    <div class="w-full">
+      <div class="flex flex-col-reverse md:flex-row md:justify-between md:items-center items-start pt-6 pb-4 text-sm md:pt-8 md:pb-0 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-col-reverse items-start md:flex-row md:gap-6 lg:items-center w-full text-center md:text-left">
+          <div class="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 md:grid-flow-col md:justify-start md:gap-x-6 md:gap-y-0 lg:text-left w-full">
+            <p class="mt-6 md:mt-0 text-xs">© 2025 Michal Hlavacek. All rights reserved.<br>Thanks for stopping by & have a great Thursday.</p>
+          </div>
+        </div>
+        <div class="mb-0 flex items-center justify-center gap-4 lg:mb-0 w-full md:w-fit">
+          <a href="https://linkedin.com/in/michalhlavacek" target="_blank" rel="noreferrer" class="hover:scale-110 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-linkedin size-7">
+              <path d="M8 11v5"></path>
+              <path d="M8 8v.01"></path>
+              <path d="M12 16v-5"></path>
+              <path d="M16 16v-3a2 2 0 1 0 -4 0"></path>
+              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
+            </svg>
+          </a>
+          <a href="mailto:hello@michalhlavacek.com" target="_blank" rel="noreferrer" class="hover:scale-110 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-mail size-7">
+              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+              <path d="M3 7l9 6l9 -6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    ((STORAGE_KEY, restoreKey) => {
+      if (!window.history.state || !window.history.state.key) {
+        let key = Math.random().toString(32).slice(2);
+        window.history.replaceState({
+          key
+        }, "");
+      }
+      try {
+        let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "{}");
+        let storedY = positions[restoreKey || window.history.state.key];
+        if (typeof storedY === "number") {
+          window.scrollTo(0, storedY);
+        }
+      } catch (error) {
+        console.error(error);
+        sessionStorage.removeItem(STORAGE_KEY);
+      }
+    })("positions", null)
+  </script>
+</body>
+</html>
