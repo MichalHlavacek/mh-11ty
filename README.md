@@ -7,8 +7,11 @@ This is an 11ty (Eleventy) static site generator project for Michal Hlavacek's p
 - `src/` - Source files
   - `_includes/` - Layout templates
     - `layout.njk` - Base layout with navbar and footer
+  - `assets/` - Source CSS files
+    - `input.css` - Tailwind CSS source file
   - `index.njk` - Homepage content
-- `assets/` - Static assets (CSS, images, etc.)
+- `static/` - Static assets (images, fonts, icons, etc.)
+- `assets/` - Generated CSS output
 - `_site/` - Generated output (created after build)
 
 ## Getting Started

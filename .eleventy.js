@@ -1,9 +1,7 @@
 export default function(eleventyConfig) {
   // Copy assets to output
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("*.png");
-  eleventyConfig.addPassthroughCopy("*.webp");
-  eleventyConfig.addPassthroughCopy("*.woff2");
+  eleventyConfig.addPassthroughCopy("static");
   
   // Set input and output directories
   return {
