@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css --watch=false && eleventy",
-    "serve": "tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css --watch=false && eleventy --serve",
-    "dev": "concurrently \"tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css --watch\" \"eleventy --serve --watch\"",
-    "css": "tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css"
+    "build": "npx tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css --minify && eleventy",
+    "serve": "npx tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css && eleventy --serve",
+    "dev": "concurrently \"npx tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css --watch\" \"eleventy --serve --watch\"",
+    "css": "npx tailwindcss -i ./src/assets/input.css -o ./assets/tailwind-CgQ7R6ek.css"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,6 @@
     "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/typography": "^0.5.19",
     "concurrently": "^9.2.1",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^3.4.17"
   }
 }
